@@ -1,0 +1,22 @@
+<%if not City.all.empty? %>
+	<% City.all.each_value do |c| %>
+	<% if not c.nil? %>
+		<h1> City:<%= c.name %></h1>
+		<% if c.landmark.length > 0 %>
+			<p> Landmark: <%= c.landmark%></p>
+		<%else%>
+			<p> Landmark: Unknown</p>
+		<%end%>
+		<% if c.population.length > 0%>
+			<p> Population: <%= c.population%></p>
+		<%else%>
+			<p> Population: Unknown</p>
+		<%end%>
+		<p> Tempurature: <%= (9 / 5) * (c.weather[:temperature] - 273) + 32%>°F
+		and it looks like <%= c.weather[:description] %>
+ 		</p>
+ 	 <% end %>
+ 	<% end %>
+<%else%>
+  <h1> Create one City! </h1>
+<%end %>
