@@ -1,7 +1,8 @@
 <%if not City.all.empty? %>
 	<% City.all.each_value do |c| %>
 	<% if not c.nil? %>
-		<h1> City:<%= c.name %></h1>
+	<fieldset>
+		 <legend><%= c.name%></legend>
 		<% if c.landmark.length > 0 %>
 			<p> Landmark: <%= c.landmark%></p>
 		<%else%>
@@ -16,6 +17,7 @@
 		and it looks like <%= c.weather[:description] %>
  		</p>
  	 <% end %>
+ 	</fieldset>
  	<% end %>
 <%else%>
   <h1> Create one City! </h1>

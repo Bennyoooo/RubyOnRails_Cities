@@ -1,4 +1,4 @@
-<h1> Update a City</h1>
+<fieldset>
 
 <%= form_with local: true, method: 'post', url: "update1" do |form| %>
   City Name: <%= form.text_field :name %><br>
@@ -6,3 +6,4 @@
   Population: <%= form.text_field :population, type:'number' %><br>
   <%= form.submit value='Update!'%>
 <% end %>
+<legend>Update a city</legend>
